@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messenger Bulk Delete</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 320px;
+        margin: 0;
+        padding: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #111827;
+        background: #ffffff;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        line-height: 1.3;
+      }
+
+      p {
+        margin: 0 0 12px;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #4b5563;
+      }
+
+      .stat {
+        padding: 12px;
+        border-radius: 10px;
+        background: #f3f4f6;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .stat strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #111827;
+      }
+
+      .hint {
+        margin-top: 12px;
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      #start-btn {
+        width: 100%;
+        margin-bottom: 12px;
+        padding: 11px 14px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #0084ff 0%, #0066cc 100%);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      #start-btn:disabled {
+        opacity: 0.65;
+        cursor: wait;
+      }
+
+      #page-status {
+        margin-bottom: 12px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      #page-status.ok {
+        background: #ecfdf5;
+        color: #065f46;
+      }
+
+      #page-status.warn {
+        background: #fff7ed;
+        color: #9a3412;
+      }
+
+      #page-status.error {
+        background: #fef2f2;
+        color: #991b1b;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Messenger Bulk Delete</h1>
+    <p>
+      Funciona en
+      <a href="https://www.facebook.com/messages" target="_blank" rel="noopener noreferrer">facebook.com/messages</a>
+      y en messenger.com.
+    </p>
+    <div id="page-status" class="warn">Comprobando pestaña activa…</div>
+    <button id="start-btn" type="button">Eliminar todos los chats</button>
+    <div class="stat" id="last-run">
+      <strong>Última ejecución</strong>
+      <span id="last-run-text">Aún no se ha ejecutado.</span>
+    </div>
+    <p class="hint">
+      También verás un botón flotante en la página de mensajes. La eliminación es irreversible: mantén la pestaña abierta.
+    </p>
+    <script src="popup.js"></script>
+  </body>
+</html>
